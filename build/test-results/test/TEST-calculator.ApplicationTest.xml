@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="calculator.ApplicationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-10-31T07:24:38" hostname="DABIN-MacBook-Pro.local" time="0.034">
+  <properties/>
+  <testcase name="커스텀_구분자_사용()" classname="calculator.ApplicationTest" time="0.031"/>
+  <testcase name="예외_테스트()" classname="calculator.ApplicationTest" time="0.002"/>
+  <system-out><![CDATA[문자열을 입력하세요 : 
+결과 : 1
+문자열을 입력하세요 :
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
