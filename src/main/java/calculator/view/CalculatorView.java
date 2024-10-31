@@ -12,8 +12,11 @@ public class CalculatorView {
         return scanner.nextLine();
     }
 
-    public void printOutput(Long result) {
+    public void printOutput(int result) {
         System.out.println("결과 : " + result);
     }
 
+    public void printError(String message) {
+        System.err.println(message);
+    }
 }

@@ -5,22 +5,15 @@ import calculator.view.CalculatorView;
 
 
 public class InputValidator {
-    private CalculatorView calculatorView;
-    private Calculator calculator;
-    public InputValidator(CalculatorView calculatorView, Calculator calculator) {
-        this.calculatorView = calculatorView;
-        this.calculator = calculator;
-    }
 
-    public String[] validInput() {
-        String input = calculatorView.getInput();
+    public String[] validInput(String input) {
         if (input == null || input.trim().isEmpty()) {
             throw new IllegalArgumentException("입력값이 비었습니다.");
         }
         String[] parseNumbers = parseInput(input);
         for (String num :parseNumbers) {
             if (!isNumber(num)  || Integer.parseInt(num) < 0) {
-                throw new IllegalArgumentException("입력에 숫자가 아닌 값이 포함되어 있습니다");
+                throw new IllegalArgumentException("입력에 숫자가 아닌 값이 포함되어 있습니다.");
             }
         }
         return parseNumbers;
@@ -56,13 +49,5 @@ public class InputValidator {
             return false;
         }
     }
-
-    public int getSumOfValidInput() {
-        String[] parseNumbers = validInput();
-        return calculator.calculateSum(parseNumbers);
-    }
-
-
-
 
 }
