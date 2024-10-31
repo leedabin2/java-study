@@ -3,6 +3,8 @@ package calculator.model.validator;
 import calculator.model.Calculator;
 import calculator.view.CalculatorView;
 
+import java.util.regex.Pattern;
+
 
 public class InputValidator {
 
@@ -30,14 +32,14 @@ public class InputValidator {
     }
 
     public String[] parseCustom(String input) {
-
-        int splitIndex = input.indexOf("\\n");;
+        int splitIndex = input.indexOf("\\n");
         if (splitIndex == -1) {
             throw new IllegalArgumentException("잘못된 형식의 입력입니다. 구분자 형식이 올바르지 않습니다.");
         }
+
         String delimiter = input.substring(2, splitIndex);
         String numbersPart = input.substring(splitIndex + 2);
-        return numbersPart.split(delimiter);
+        return numbersPart.split(Pattern.quote(delimiter));
     }
 
 
