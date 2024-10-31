@@ -8,7 +8,7 @@ public class InputValidator {
 
     public String[] validInput(String input) {
         if (input == null || input.trim().isEmpty()) {
-            throw new IllegalArgumentException("입력값이 비었습니다.");
+            return new String[] {"0"};
         }
         String[] parseNumbers = parseInput(input);
         for (String num :parseNumbers) {
